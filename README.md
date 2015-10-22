@@ -3,11 +3,12 @@ Code for doing slightly atypical things with CSVs
 
 ## csv_gen
 
-Randomly generates CSVS. The first column is a binary classification and
+Randomly generates CSVs. The first column is a binary classification and
 the rest of the columns are doubles. Generated CSVs have headers.
 
 csv_gen is *cute*: it formats numbers so that the size of the CSV on-disk is
-the same as the size of an equivalent array of doubles in memory. For example, a 1GB CSV on disk will become a 1GB numpy array.
+the same as the size of an equivalent array of doubles in memory. For example, 
+a 1GB CSV on disk will become a 1GB Numpy array if it is loaded into Numpy.
 
 ### Building
 
@@ -25,7 +26,7 @@ CSVs are written to standard out
 
 ## csv_to_npy
 
-Converts A CSV of doubles with a header to a file with Numpy's 
+Converts A CSV of doubles with a header to a file in Numpy's 
 [".npy" format](http://docs.scipy.org/doc/numpy-dev/neps/npy-format.html).
 
 ### Building
@@ -47,7 +48,7 @@ Converts A CSV of doubles with a header to a file with Numpy's
 ## csv_to_rst.py
 
 Converts a CSV with a header to 
-[rst grid-format tables](http://docutils.sourceforge.net/docs/user/rst/quickref.html#tables).
+[RST grid-format tables](http://docutils.sourceforge.net/docs/user/rst/quickref.html#tables).
 
 ### Usage
 
@@ -57,14 +58,14 @@ csv_to_rst.py takes csvs from standard in and writes rst tables to stdout
 
 ### Example
 
-   $ echo -e 'idx,name,title\n1,Jim,CEO\n2,Bill,Engineer' | python csv_to_rst.py 
-   +-----+------+----------+
-   | idx | name |    title |
-   +=====+======+==========+
-   |   1 |  Jim |      CEO |
-   +-----+------+----------+
-   |   2 | Bill | Engineer |
-   +-----+------+----------+ 
+    $ echo -e 'idx,name,title\n1,Jim,CEO\n2,Bill,Engineer' | python csv_to_rst.py 
+    +-----+------+----------+
+    | idx | name |    title |
+    +=====+======+==========+
+    |   1 |  Jim |      CEO |
+    +-----+------+----------+
+    |   2 | Bill | Engineer |
+    +-----+------+----------+ 
 
 ## csv_to_sqlite.py
 
