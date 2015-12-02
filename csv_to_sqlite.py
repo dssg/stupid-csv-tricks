@@ -20,6 +20,8 @@ def __sqlite_type(np_descr):
         return 'REAL'
     if 'S' in np_descr:
         return 'TEXT'
+    if 'O' in np_descr:
+        return 'TEXT'
     if 'M' in np_descr or 'm' in np_descr:
         return 'INTEGER'
     raise ValueError('No sqlite type found for np type: {}'.format(np_descr))

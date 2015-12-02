@@ -53,7 +53,7 @@ void csv_to_npy(FILE *f_csv, FILE *f_npy) {
     double cell_val;
     for (cell_ind = 0; cell_ind < n_cells; ++cell_ind) {
         fscanf(f_csv, "  %lf %*[,] ", &cell_val);
-        fwrite(&cell_val, 1, sizeof(cell_val), f_npy);
+        //fwrite(&cell_val, 1, sizeof(cell_val), f_npy);
     }    
 
 }
